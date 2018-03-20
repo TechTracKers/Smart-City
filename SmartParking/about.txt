@@ -1,0 +1,3 @@
+This project deals with smart parking solutions . 
+With this the user can book a parking spot, at his destination with the comfort of sitting at home . 
+In this ultrasonic sensors are used , which sends real time data about parking vacancies.
