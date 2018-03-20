@@ -51,3 +51,42 @@ while GPIO.input(ECHO1)==True:
 
 
 sig_time=end-start
+sig_time1=end1-start1
+distance=str(sig_time*17150)
+print(distance)
+distance1=sig_time1*17150
+
+
+db=pymysql.connect('localhost','naman','mayank7857','hello')
+cursor=db.cursor()
+sql1="DELETE FROM kumar"
+cursor.execute(sql1)
+sql="INSERT INTO kumar(length)values('"+distance+"')"
+cursor.execute(sql)
+db.commit()
+
+cursor.execute(sql)
+sql2="select * from kumar"
+cursor.execute(sql2)
+data=cursor.fetchone()
+print(data)
+data1=float(data[0])
+print(data1)
+print(data1)
+
+
+if data1>12:
+        print("parking space is not empty")
+else:
+        print("parking space is empty empty")
+db.close()
+
+print(distance) 
+#print(distance1)
+
+
+GPIO.cleanup()
+
+
+
+
